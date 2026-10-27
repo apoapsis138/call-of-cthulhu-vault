@@ -69,7 +69,7 @@ To use a nicer address: Vercel project, Settings, Domains.
    - GitHub token: paste it.
    - Base URL: the site's address, e.g. `https://my-campaign.vercel.app/`.
    - The checkmark next to the token turns green when the connection works.
-3. **Appearance:** Settings, Digital Garden, Appearance, Manage. Pick the theme (this vault uses ITS Theme, light), and the site name, then Apply settings to site. That opens a pull request on the site repo; it merges itself, or I merge it on GitHub.
+3. **Appearance:** Settings, Digital Garden, Appearance, Manage. Pick the theme (this vault uses ITS Theme, light), the site name, and the favicon (already set to `assets/favicon.png`), then Apply settings to site. That opens a pull request on the site repo; it merges itself, or I merge it on GitHub.
 4. **Keep the token out of git.** The token is saved in `.obsidian/plugins/digitalgarden/data.json`. Before the next commit:
    ```
    git update-index --skip-worktree .obsidian/plugins/digitalgarden/data.json

@@ -6,7 +6,7 @@
   "prHistory": [],
   "baseTheme": "light",
   "theme": "{\"name\":\"ITS Theme\",\"author\":\"SlRvb\",\"repo\":\"slrvb/Obsidian--ITS-Theme\",\"screenshot\":\"ITS.png\",\"modes\":[\"dark\",\"light\"],\"cssUrl\":\"https://raw.githubusercontent.com/slrvb/Obsidian--ITS-Theme/HEAD/theme.css\"}",
-  "faviconPath": "",
+  "faviconPath": "assets/favicon.png",
   "logoPath": "",
   "logoHeight": "",
   "useFullResolutionImages": false,

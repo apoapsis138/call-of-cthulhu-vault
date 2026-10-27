@@ -70,6 +70,7 @@ Every image in the vault.
 - `originals`: created by the photo script, holds the untouched copy of every portrait it treats
 - `PlaceholderImage.png`: the stand-in used wherever a note has no picture yet
 - `cardback.png`: the card back used by the optional `card` CSS snippet
+- `favicon.png` and `favicon.ico`: the little Cthulhu head used as the site's tab icon
 - `reference`: the publisher's PDFs. Kept out of git and never published.
 
 ## What Reaches the Site
