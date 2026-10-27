@@ -1,0 +1,44 @@
+properties:
+  note.next_action:
+    displayName: Next Action
+  next_action:
+    displayName: Next Action
+  note.source:
+    displayName: Source
+  source:
+    displayName: Source
+  note.status:
+    displayName: Status
+  status:
+    displayName: Status
+  note.blocked_by:
+    displayName: Blocked By
+  blocked_by:
+    displayName: Blocked By
+  note.related_clues:
+    displayName: Clues
+  related_clues:
+    displayName: Clues
+views:
+- type: list
+  name: Cards
+  filters:
+    and:
+    - type == "lead"
+    - status != "resolved"
+    - status != "dead-end"
+    - status != "archived"
+    - '!file.inFolder("10 Templates")'
+    - '!file.inFolder("99 - Archive")'
+    - '!file.inFolder("98 - Vault System")'
+  order:
+  - file.name
+  - status
+  - next_action
+  - blocked_by
+  - related_clues
+  - source
+  cardSize: 240
+  imageAspectRatio: 1
+  markers: number
+  indentProperties: true

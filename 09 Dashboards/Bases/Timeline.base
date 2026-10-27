@@ -1,0 +1,20 @@
+properties:
+  note.summary:
+    displayName: Summary
+  summary:
+    displayName: Summary
+views:
+- type: table
+  name: Table
+  filters:
+    and:
+    - type == "timeline-entry"
+    - '!file.inFolder("10 Templates")'
+    - '!file.inFolder("99 - Archive")'
+    - '!file.inFolder("98 - Vault System")'
+  order:
+  - file.name
+  - summary
+  rowHeight: tall
+  columnSize:
+    file.name: 292

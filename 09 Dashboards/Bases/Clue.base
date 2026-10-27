@@ -1,0 +1,47 @@
+properties:
+  note.related_leads:
+    displayName: Leads
+  related_leads:
+    displayName: Leads
+  note.confidence:
+    displayName: Confidence
+  confidence:
+    displayName: Confidence
+  note.status:
+    displayName: Status
+  status:
+    displayName: Status
+  note.related_npcs:
+    displayName: People
+  related_npcs:
+    displayName: People
+views:
+- type: cards
+  name: Clues
+  filters:
+    and:
+    - type == "clue"
+    - status != "archived"
+    - '!file.inFolder("10 Templates")'
+    - '!file.inFolder("99 - Archive")'
+    - '!file.inFolder("98 - Vault System")'
+  groupBy:
+    property: confidence
+    direction: ASC
+  order:
+  - file.name
+  - status
+  - confidence
+  - related_npcs
+  - related_leads
+  sort:
+  - property: status
+    direction: ASC
+  columnSize:
+    file.name: 456
+    note.related_npcs: 231
+  cardSize: 240
+  markers: bullet
+  rowHeight: medium
+  imageAspectRatio: 1.4
+  imageFit: contain

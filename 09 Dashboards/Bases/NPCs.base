@@ -1,0 +1,84 @@
+properties:
+  note.location:
+    displayName: Location
+  location:
+    displayName: Location
+  note.disposition:
+    displayName: Disposition
+  disposition:
+    displayName: Disposition
+  note.first_seen:
+    displayName: First Seen
+  first_seen:
+    displayName: First Seen
+  note.importance:
+    displayName: Importance
+  importance:
+    displayName: Importance
+  note.organization:
+    displayName: Organization
+  organization:
+    displayName: Organization
+  note.last_seen:
+    displayName: Last Seen
+  last_seen:
+    displayName: Last Seen
+  note.faction:
+    displayName: Faction
+  faction:
+    displayName: Faction
+  note.status:
+    displayName: Status
+  status:
+    displayName: Status
+  occupation:
+    displayName: Occupation
+  note.occupation:
+    displayName: Occupation
+views:
+- type: cards
+  name: Rogues' Gallery
+  filters:
+    and:
+    - type == "npc"
+    - '!file.inFolder("10 Templates")'
+    - '!file.inFolder("99 - Archive")'
+    - '!file.inFolder("98 - Vault System")'
+  groupBy:
+    property: status
+    direction: ASC
+  order:
+  - file.name
+  - occupation
+  - disposition
+  - location
+  - status
+  sort:
+  - property: file.name
+    direction: ASC
+  image: note.portrait
+  imageFit: cover
+  imageAspectRatio: 1.3
+  cardSize: 190
+- type: cards
+  name: Cards
+  filters:
+    and:
+    - type == "npc"
+    - '!file.inFolder("10 Templates")'
+    - '!file.inFolder("99 - Archive")'
+    - '!file.inFolder("98 - Vault System")'
+  groupBy:
+    property: status
+    direction: ASC
+  order:
+  - file.name
+  - disposition
+  - first_seen
+  - importance
+  - last_seen
+  - location
+  - status
+  - faction
+  - organization
+  cardSize: 240

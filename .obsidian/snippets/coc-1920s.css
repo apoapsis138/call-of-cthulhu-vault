@@ -1,0 +1,755 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap");
+
+/* ============================================================
+   Call of Cthulhu: 1920s Typewriter Case File
+   Works on top of ITS Theme.
+
+   Light: manila folder, typed ink, red rubber stamps.
+   Dark:  the same file read under a desk lamp at night.
+
+   Readability: every text colour is contrast-checked (body text
+   about 13:1, faint text 5.3:1 or better). Links are always
+   underlined, unresolved links are dotted, so nothing depends
+   on colour alone.
+   ============================================================ */
+
+/* ---------- Fonts ---------- */
+body {
+  --coc-type: "Special Elite", "Courier New", monospace;
+  --coc-mono: "Courier Prime", "Courier New", monospace;
+
+  --font-text-theme: var(--coc-mono);
+  --font-text-override: var(--coc-mono);
+  --font-interface-theme: var(--coc-mono);
+  --font-interface-override: var(--coc-mono);
+  --font-monospace-theme: var(--coc-mono);
+  --h1-font: var(--coc-type);
+  --h2-font: var(--coc-type);
+  --h3-font: var(--coc-type);
+  --h4-font: var(--coc-type);
+  --h5-font: var(--coc-type);
+  --h6-font: var(--coc-type);
+  --inline-title-font: var(--coc-type);
+  --font-text-size: 16px;
+  --line-height-normal: 1.75;
+  --bold-weight: 700;
+}
+
+/* ---------- Light: manila folder ---------- */
+body.theme-light,
+body.theme-light.css-settings-manager {
+  --coc-paper: #EEDFB9;
+  --coc-paper-hi: #F7F0DC;
+  --coc-paper-shade: #D8C390;
+  --coc-paper-deep: #CDB47A;
+  --coc-ink: #1E1B16;
+  --coc-ink-soft: #4A4232;
+  --coc-ink-faint: #5C5140;
+  --coc-stamp: #8A1C14;
+  --coc-stamp-fade: rgba(138, 28, 20, 0.72);
+  --coc-link: #1D3B63;
+  --coc-link-hover: #0E2240;
+  --coc-rule: #B9A26C;
+  --coc-rule-strong: #8C7A52;
+  --coc-ruled-line: rgba(90, 74, 42, 0.10);
+  --coc-shadow: rgba(40, 28, 10, 0.18);
+  --coc-photo-border: #FFFDF6;
+
+  --note: var(--coc-paper);
+  --note-rgb: 238, 223, 185;
+  --outer-bar: var(--coc-paper-deep);
+  --side-bar: var(--coc-paper-deep);
+  --side-bar-bg: var(--coc-paper-deep);
+  --dark-sidebar: var(--coc-paper-shade);
+  --bg: var(--coc-paper-shade);
+  --fg: var(--coc-ink);
+  --text: var(--coc-ink);
+  --soft-text: var(--coc-ink-soft);
+  --faint-text: var(--coc-ink-faint);
+  --headers: var(--coc-ink);
+  --accent: var(--coc-stamp);
+  --lite-accent: var(--coc-rule-strong);
+  --dark-accent: var(--coc-stamp);
+  --deep-dark-accent: #3A0E0A;
+  --accent2: var(--coc-rule);
+  --accent2-lite: var(--coc-link);
+  --text-dl: #F7F0DC;
+  --bttn: var(--coc-stamp);
+  --input-bg: var(--coc-paper-hi);
+  --hvr: rgba(90, 74, 42, 0.14);
+  --hvr-active: rgba(90, 74, 42, 0.24);
+  --highlight: rgba(214, 170, 60, 0.40);
+  --inactive: var(--coc-ink-faint);
+  --outline: var(--coc-rule-strong);
+  --lines: var(--coc-rule);
+  --hr: var(--coc-rule);
+  --folder: var(--coc-ink-soft);
+  --folder-open: var(--coc-stamp);
+  --file-icon-color: var(--coc-ink-faint);
+  --icons: var(--coc-ink-soft);
+  --code-text: var(--coc-stamp);
+  --code-bg: var(--coc-paper-shade);
+  --embed-bg: var(--coc-paper-hi);
+  --aside-bg: var(--coc-paper-hi);
+  --footnote: var(--coc-ink-soft);
+  --th: transparent;
+  --th-text: var(--coc-ink);
+  --td: transparent;
+  --table: var(--coc-rule);
+  --tag: transparent;
+  --tag-text: var(--coc-stamp);
+  --i-at: var(--coc-stamp);
+  --progress: var(--coc-stamp);
+  --progress-bg: var(--coc-paper-shade);
+  --vault-name-color: var(--coc-ink);
+  --nav-item-color: var(--coc-ink);
+  --list-marker-color: var(--coc-ink-soft);
+  --blockquote-border-color: var(--coc-rule-strong);
+  --popover-background: var(--coc-paper-hi);
+  --graph-node: var(--coc-ink-soft);
+  --graph-lines: var(--coc-rule);
+  --graph-fill: var(--coc-stamp);
+}
+
+/* ---------- Dark: the file under a desk lamp ---------- */
+body.theme-dark,
+body.theme-dark.css-settings-manager {
+  --coc-paper: #1C1914;
+  --coc-paper-hi: #24201A;
+  --coc-paper-shade: #141210;
+  --coc-paper-deep: #2C2720;
+  --coc-ink: #E9DFC6;
+  --coc-ink-soft: #BFB191;
+  --coc-ink-faint: #9E9277;
+  --coc-stamp: #E59A8A;
+  --coc-stamp-fade: rgba(229, 154, 138, 0.75);
+  --coc-link: #9FC0E6;
+  --coc-link-hover: #C9DDF3;
+  --coc-rule: #4A4030;
+  --coc-rule-strong: #6E6048;
+  --coc-ruled-line: rgba(233, 223, 198, 0.05);
+  --coc-shadow: rgba(0, 0, 0, 0.5);
+  --coc-photo-border: #D9CFB8;
+
+  --note: var(--coc-paper);
+  --note-rgb: 28, 25, 20;
+  --outer-bar: var(--coc-paper-shade);
+  --side-bar: var(--coc-paper-shade);
+  --side-bar-bg: var(--coc-paper-shade);
+  --dark-sidebar: var(--coc-paper-deep);
+  --bg: var(--coc-paper-deep);
+  --fg: var(--coc-ink);
+  --text: var(--coc-ink);
+  --soft-text: var(--coc-ink-soft);
+  --faint-text: var(--coc-ink-faint);
+  --headers: var(--coc-ink);
+  --accent: var(--coc-stamp);
+  --lite-accent: var(--coc-rule-strong);
+  --dark-accent: #6B2A20;
+  --deep-dark-accent: #2E120D;
+  --accent2: var(--coc-rule);
+  --accent2-lite: var(--coc-link);
+  --text-dl: #F4ECDB;
+  --bttn: #6B2A20;
+  --input-bg: rgba(0, 0, 0, 0.3);
+  --hvr: rgba(233, 223, 198, 0.08);
+  --hvr-active: rgba(233, 223, 198, 0.14);
+  --highlight: rgba(214, 170, 60, 0.30);
+  --inactive: var(--coc-ink-faint);
+  --outline: var(--coc-rule-strong);
+  --lines: var(--coc-rule);
+  --hr: var(--coc-rule);
+  --folder: var(--coc-ink-soft);
+  --folder-open: var(--coc-stamp);
+  --file-icon-color: var(--coc-ink-faint);
+  --icons: var(--coc-ink-soft);
+  --code-text: var(--coc-stamp);
+  --code-bg: var(--coc-paper-deep);
+  --embed-bg: var(--coc-paper-hi);
+  --aside-bg: var(--coc-paper-hi);
+  --footnote: var(--coc-ink-soft);
+  --th: transparent;
+  --th-text: var(--coc-ink);
+  --td: transparent;
+  --table: var(--coc-rule);
+  --tag: transparent;
+  --tag-text: var(--coc-stamp);
+  --i-at: var(--coc-stamp);
+  --progress: var(--coc-stamp);
+  --progress-bg: var(--coc-paper-deep);
+  --vault-name-color: var(--coc-ink);
+  --nav-item-color: var(--coc-ink);
+  --list-marker-color: var(--coc-ink-soft);
+  --blockquote-border-color: var(--coc-rule-strong);
+  --popover-background: var(--coc-paper-hi);
+  --graph-node: var(--coc-ink-soft);
+  --graph-lines: var(--coc-rule);
+  --graph-fill: var(--coc-stamp);
+}
+
+/* ---------- Standard Obsidian variables (both modes) ---------- */
+body.theme-light,
+body.theme-dark {
+  --background-primary: var(--coc-paper);
+  --background-primary-alt: var(--coc-paper-hi);
+  --background-secondary: var(--coc-paper-deep);
+  --background-secondary-alt: var(--coc-paper-shade);
+  --background-modifier-border: var(--coc-rule);
+  --text-normal: var(--coc-ink);
+  --text-muted: var(--coc-ink-soft);
+  --text-faint: var(--coc-ink-faint);
+  --text-accent: var(--coc-link);
+  --text-accent-hover: var(--coc-link-hover);
+  --link-color: var(--coc-link);
+  --link-color-hover: var(--coc-link-hover);
+  --link-external-color: var(--coc-link);
+  --link-unresolved-color: var(--coc-ink-soft);
+  --interactive-accent: var(--bttn);
+  --text-on-accent: var(--text-dl);
+  --h1-color: var(--coc-ink);
+  --h2-color: var(--coc-ink);
+  --h3-color: var(--coc-ink);
+  --h4-color: var(--coc-stamp);
+  --h5-color: var(--coc-ink-soft);
+  --h6-color: var(--coc-ink-soft);
+  --inline-title-color: var(--coc-ink);
+  --table-border-color: var(--coc-rule);
+  --table-header-background: transparent;
+  --table-header-color: var(--coc-ink);
+  --blockquote-border-color: var(--coc-rule-strong);
+  --hr-color: var(--coc-rule);
+  --tag-color: var(--coc-stamp);
+  --tag-background: transparent;
+  --tag-border-color: var(--coc-stamp);
+  --tag-border-width: 2px;
+}
+
+/* ---------- Page: faint ruled lines like a typed report ---------- */
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-scroller {
+  background-image: repeating-linear-gradient(
+    transparent 0,
+    transparent 27px,
+    var(--coc-ruled-line) 27px,
+    var(--coc-ruled-line) 28px
+  );
+}
+
+/* ---------- Body text ---------- */
+.markdown-rendered,
+.markdown-source-view.mod-cm6 .cm-scroller {
+  font-family: var(--coc-mono) !important;
+  color: var(--coc-ink);
+}
+
+/* ---------- Title: typed case-file header ---------- */
+.inline-title {
+  font-family: var(--coc-type) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--coc-ink) !important;
+}
+.inline-title::before {
+  content: "CASE FILE \2014  CALL OF CTHULHU";
+  display: block;
+  font-size: 0.38em;
+  letter-spacing: 0.3em;
+  color: var(--coc-ink-soft);
+  margin-bottom: 0.2em;
+}
+.inline-title::after {
+  content: "" !important;
+  display: block !important;
+  margin-top: 0.35rem !important;
+  height: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  border-bottom: 3px double var(--coc-ink) !important;
+}
+
+/* ---------- Headings: typed and underlined ---------- */
+.markdown-rendered h1, .HyperMD-header-1, .cm-header-1,
+.markdown-rendered h2, .HyperMD-header-2, .cm-header-2,
+.markdown-rendered h3, .HyperMD-header-3, .cm-header-3,
+.markdown-rendered h4, .HyperMD-header-4, .cm-header-4,
+.markdown-rendered h5, .HyperMD-header-5, .cm-header-5,
+.markdown-rendered h6, .HyperMD-header-6, .cm-header-6 {
+  font-family: var(--coc-type) !important;
+  font-weight: 400 !important;
+  font-variant: normal !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--coc-ink) !important;
+}
+
+.markdown-rendered h1 { font-size: 1.5em; }
+.markdown-rendered h2 { font-size: 1.25em; }
+.markdown-rendered h3 { font-size: 1.05em; }
+.markdown-rendered h4 { font-size: 0.92em; color: var(--coc-stamp) !important; }
+.markdown-rendered h5,
+.markdown-rendered h6 { font-size: 0.85em; color: var(--coc-ink-soft) !important; }
+.cm-header-4 { color: var(--coc-stamp) !important; }
+
+.markdown-rendered h2::before { content: "\00A7  "; }
+
+.markdown-rendered h1::after,
+.markdown-rendered h2::after {
+  content: "" !important;
+  display: block !important;
+  width: 100% !important;
+  height: 0 !important;
+  margin-top: 0.2rem !important;
+  background: none !important;
+  border: 0 !important;
+  border-bottom: 1px dashed var(--coc-ink-soft) !important;
+}
+.markdown-rendered h1::after { border-bottom: 2px solid var(--coc-ink) !important; }
+
+.markdown-rendered h3 {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+.markdown-rendered h3::after,
+.markdown-rendered h4::after,
+.markdown-rendered h5::after,
+.markdown-rendered h6::after { display: none !important; }
+
+/* ---------- Links (always underlined) ---------- */
+.markdown-rendered a,
+.markdown-rendered .internal-link,
+.markdown-rendered .external-link,
+.cm-hmd-internal-link .cm-underline,
+.cm-link .cm-underline,
+.cm-url {
+  color: var(--coc-link) !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: solid !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.18em !important;
+}
+.markdown-rendered a:hover,
+.markdown-rendered .internal-link:hover,
+.cm-hmd-internal-link .cm-underline:hover {
+  color: var(--coc-link-hover) !important;
+  text-decoration-thickness: 2px !important;
+}
+.markdown-rendered .internal-link.is-unresolved,
+.is-unresolved .cm-underline {
+  color: var(--coc-ink-soft) !important;
+  text-decoration-style: dotted !important;
+  opacity: 1 !important;
+}
+
+/* ---------- Horizontal rule: typed dashes with scissors ---------- */
+.markdown-rendered hr {
+  border: 0 !important;
+  background: none !important;
+  height: 1.4em !important;
+  margin: 1.4em 0 !important;
+  text-align: center;
+  overflow: visible;
+}
+.markdown-rendered hr::after {
+  content: "\2014  \2014  \2014  \2702  \2014  \2014  \2014" !important;
+  color: var(--coc-ink-soft);
+  font-family: var(--coc-mono);
+  white-space: nowrap;
+  background: none !important;
+}
+
+/* ---------- Blockquote: pasted-in clipping ---------- */
+.markdown-rendered blockquote {
+  font-style: normal;
+  background: var(--coc-paper-hi) !important;
+  border: 1px solid var(--coc-rule) !important;
+  border-left: 1px solid var(--coc-rule) !important;
+  padding: 0.7em 1em !important;
+  box-shadow: 2px 2px 0 var(--coc-shadow);
+  transform: rotate(-0.4deg);
+  color: var(--coc-ink) !important;
+}
+
+/* ---------- Tags: red rubber stamps ---------- */
+.markdown-rendered a.tag,
+.cm-hashtag {
+  font-family: var(--coc-type) !important;
+  font-size: 0.78em !important;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  color: var(--coc-stamp) !important;
+  background: transparent !important;
+  border: 2px solid var(--coc-stamp) !important;
+  border-radius: 2px !important;
+  padding: 0 0.4em !important;
+}
+.markdown-rendered a.tag {
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
+/* ---------- Tables: typed ledger ---------- */
+.markdown-rendered table {
+  border-collapse: collapse !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+.markdown-rendered th,
+.cm-table-widget th {
+  font-family: var(--coc-type) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: transparent !important;
+  color: var(--coc-ink) !important;
+  border: 0 !important;
+  border-bottom: 2px solid var(--coc-ink) !important;
+}
+.markdown-rendered td,
+.cm-table-widget td {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px dotted var(--coc-rule-strong) !important;
+  color: var(--coc-ink) !important;
+}
+.markdown-rendered tbody tr:nth-child(even) { background: transparent !important; }
+
+/* ---------- Callouts: index cards clipped into the file ---------- */
+.callout:not([data-callout="infobox"]):not([data-callout="caption"]) {
+  --callout-color: 90, 74, 42;
+  display: flow-root; /* sit beside a floated infobox, not under it */
+  background: var(--coc-paper-hi) !important;
+  border: 1px solid var(--coc-rule) !important;
+  border-top: 3px solid var(--coc-rule-strong) !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 3px 0 var(--coc-shadow) !important;
+}
+.callout .callout-title {
+  font-family: var(--coc-type) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--coc-ink) !important;
+}
+.callout .callout-icon { color: var(--coc-stamp) !important; }
+
+/* ---------- Infobox (> [!infobox|right]): dossier with clipped photo ---------- */
+.callout[data-callout="infobox"] {
+  position: relative;
+  background: var(--coc-paper-hi) !important;
+  color: var(--coc-ink) !important;
+  border: 1px solid var(--coc-rule-strong) !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  box-shadow: 3px 4px 0 var(--coc-shadow) !important;
+  transform: rotate(0.5deg);
+}
+.callout[data-callout="infobox"][data-callout-metadata~="right"] {
+  float: right !important;
+  clear: right !important;
+  width: 21rem !important;
+  max-width: 42% !important;
+  margin: 0.25rem 0 1rem 1.5rem !important;
+}
+.callout[data-callout="infobox"] > .callout-title { display: none !important; }
+.callout[data-callout="infobox"] > .callout-content { padding: 0 !important; margin: 0 !important; }
+.callout[data-callout="infobox"] .callout-content > p { margin: 0 !important; }
+
+.callout[data-callout="infobox"] h1 {
+  font-family: var(--coc-type) !important;
+  font-size: 1.1rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center !important;
+  color: var(--coc-ink) !important;
+  background: transparent !important;
+  border-bottom: 1px dashed var(--coc-ink-soft) !important;
+  padding: 0.6rem 0.75rem 0.5rem !important;
+  margin: 0 !important;
+}
+.callout[data-callout="infobox"] h1::after { display: none !important; }
+
+/* Portrait: photograph with a white border, clipped on */
+.callout[data-callout="infobox"] img {
+  display: block !important;
+  width: calc(100% - 24px) !important;
+  height: auto !important;
+  margin: 12px !important;
+  border: 6px solid var(--coc-photo-border) !important;
+  border-radius: 0 !important;
+  box-shadow: 1px 2px 4px var(--coc-shadow);
+}
+
+.callout[data-callout="infobox"] table,
+.callout[data-callout="infobox"] tr {
+  width: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  font-size: 0.9rem !important;
+}
+.callout[data-callout="infobox"] th {
+  font-family: var(--coc-type) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--coc-ink-soft) !important;
+  padding: 0.3rem 0.6rem !important;
+}
+.callout[data-callout="infobox"] td {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px dotted var(--coc-rule-strong) !important;
+  padding: 0.3rem 0.6rem !important;
+  vertical-align: top !important;
+}
+.callout[data-callout="infobox"] td:first-child {
+  width: 40% !important;
+  font-family: var(--coc-type) !important;
+  text-transform: uppercase;
+  font-size: 0.75em !important;
+  color: var(--coc-ink-soft) !important;
+}
+
+@media screen and (max-width: 768px) {
+  .callout[data-callout="infobox"][data-callout-metadata~="right"] {
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 1rem 0 !important;
+    transform: none;
+  }
+}
+
+/* ---------- Tome caption card (> [!caption|right]) ---------- */
+.callout[data-callout="caption"] img {
+  border: 6px solid var(--coc-photo-border) !important;
+  box-shadow: 1px 2px 4px var(--coc-shadow);
+}
+
+/* ---------- Bases cards: typed index cards ---------- */
+.bases-cards-item {
+  background: var(--coc-paper-hi) !important;
+  border: 1px solid var(--coc-rule) !important;
+  border-top: 3px solid var(--coc-stamp) !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 3px 0 var(--coc-shadow) !important;
+  font-family: var(--coc-mono) !important;
+}
+
+/* ---------- Sidebars and file explorer ---------- */
+.nav-folder-title-content,
+.nav-file-title-content {
+  font-family: var(--coc-type) !important;
+}
+.nav-folder-title-content { text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.04em; }
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  background: var(--hvr-active) !important;
+  color: var(--coc-ink) !important;
+}
+
+/* ---------- Highlights and checkboxes ---------- */
+.markdown-rendered mark,
+.cm-highlight {
+  background: var(--highlight) !important;
+  color: var(--coc-ink) !important;
+}
+input[type="checkbox"]:checked {
+  background-color: var(--coc-stamp) !important;
+  border-color: var(--coc-stamp) !important;
+}
+
+/* ---------- Connections panel (10 Templates/views/connections) ---------- */
+.coc-connections {
+  background: var(--coc-paper-hi);
+  border: 1px solid var(--coc-rule);
+  border-top: 3px double var(--coc-rule-strong);
+  box-shadow: 2px 3px 0 var(--coc-shadow);
+  padding: 0.4rem 1rem 0.6rem;
+  margin: 0.5rem 0 1rem;
+}
+.coc-connections h4 {
+  font-family: var(--coc-type) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85em !important;
+  color: var(--coc-stamp) !important;
+  border-bottom: 1px dashed var(--coc-ink-soft);
+  padding-bottom: 0.2rem;
+  margin: 0.7rem 0 0.4rem !important;
+}
+.coc-connections strong {
+  font-family: var(--coc-type);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.85em;
+  color: var(--coc-ink-soft);
+}
+.coc-connections ul { margin: 0.1rem 0 0.6rem; }
+.coc-connections p { margin: 0.3rem 0; }
+.coc-connections em { color: var(--coc-ink-faint); font-size: 0.9em; }
+
+/* ---------- Status stamps over the dossier photo ----------
+   Automatic: the infobox "Status" cell tags the card with
+   coc-status-<status>. Set status to "dead" or "missing". */
+.callout[data-callout="infobox"]:is(:has(.coc-status-dead), :has(.coc-status-missing)) .image-embed,
+.callout[data-callout="infobox"]:is(:has(.coc-status-dead), :has(.coc-status-missing)) picture,
+.callout[data-callout="infobox"]:is(:has(.coc-status-dead), :has(.coc-status-missing)) p:has(> img) {
+  position: relative;
+  display: block;
+}
+.callout[data-callout="infobox"]:is(:has(.coc-status-dead), :has(.coc-status-missing)) :is(.image-embed, picture, p:has(> img))::after {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  font-family: var(--coc-type);
+  font-size: 1.9rem;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  padding: 0.25em 0.45em 0.15em;
+  border-radius: 3px;
+  background: rgba(240, 228, 200, 0.85);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 2;
+}
+.callout[data-callout="infobox"]:has(.coc-status-dead) :is(.image-embed, picture, p:has(> img))::after {
+  content: "DECEASED";
+  transform: translate(-50%, -50%) rotate(-14deg);
+  color: #8A140C;
+  border: 4px double #8A140C;
+}
+.callout[data-callout="infobox"]:has(.coc-status-missing) :is(.image-embed, picture, p:has(> img))::after {
+  content: "MISSING";
+  transform: translate(-50%, -50%) rotate(9deg);
+  color: #1D2F4F;
+  border: 3px solid #1D2F4F;
+  outline: 1px solid #1D2F4F;
+  outline-offset: 3px;
+}
+/* only one stamp when both a picture and its paragraph match */
+.callout[data-callout="infobox"] p:has(> picture)::after { content: none !important; }
+/* the status value itself reads like a typed stamp */
+.callout[data-callout="infobox"] .coc-status-dead { color: #8A140C; font-weight: 700; text-transform: uppercase; }
+.callout[data-callout="infobox"] .coc-status-missing { color: #1D2F4F; font-weight: 700; text-transform: uppercase; }
+.theme-dark .callout[data-callout="infobox"] .coc-status-missing { color: var(--coc-link); }
+.theme-dark .callout[data-callout="infobox"] .coc-status-dead { color: var(--coc-stamp); }
+
+/* ---------- Dashboard card grids (NPC and Timeline cards) ---------- */
+.investigator-card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 0.75rem 0 1.5rem;
+}
+.investigator-card {
+  background: var(--coc-paper-hi) !important;
+  background-image: repeating-linear-gradient(
+    transparent 0, transparent 23px,
+    var(--coc-ruled-line) 23px, var(--coc-ruled-line) 24px
+  ) !important;
+  border: 1px solid var(--coc-rule) !important;
+  border-top: 3px solid var(--coc-stamp) !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 3px 0 var(--coc-shadow) !important;
+  padding: 0.6rem 0.85rem 0.7rem !important;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+.investigator-card:nth-child(odd) { transform: rotate(-0.4deg); }
+.investigator-card:nth-child(even) { transform: rotate(0.35deg); }
+.investigator-card h4,
+.investigator-card h5 {
+  font-family: var(--coc-type) !important;
+  text-transform: uppercase;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.4rem !important;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px dashed var(--coc-ink-soft);
+  text-decoration: none !important;
+}
+.investigator-card h4::before,
+.investigator-card h4::after,
+.investigator-card h5::after { display: none !important; }
+.investigator-card p { margin: 0.15rem 0 !important; }
+.investigator-card strong {
+  font-family: var(--coc-type);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: var(--coc-ink-soft);
+}
+
+/* ---------- Visual timeline (10 Templates/views/timeline) ---------- */
+.coc-timeline {
+  position: relative;
+  margin: 0.5rem 0 1.5rem;
+  padding-left: 2.6rem;
+}
+.coc-timeline::before {
+  content: "";
+  position: absolute;
+  left: 1.05rem;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  border-left: 2px dashed var(--coc-ink-soft);
+}
+.coc-timeline .mt-day {
+  font-family: var(--coc-type);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85em;
+  color: var(--coc-stamp);
+  margin: 1.2rem 0 0.5rem -2.6rem;
+  padding-left: 2.6rem;
+  border-bottom: 1px solid var(--coc-rule);
+}
+.coc-timeline .mt-entry {
+  position: relative;
+  margin: 0 0 0.8rem;
+}
+.coc-timeline .mt-mark {
+  position: absolute;
+  left: -2.45rem;
+  top: 0.35rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  line-height: 1.6rem;
+  text-align: center;
+  font-size: 0.95rem;
+  background: var(--coc-paper-hi);
+  border: 2px solid var(--coc-ink-soft);
+  border-radius: 50%;
+  color: var(--coc-ink);
+}
+.coc-timeline .mt-death .mt-mark,
+.coc-timeline .mt-attack .mt-mark { border-color: var(--coc-stamp); color: var(--coc-stamp); }
+.coc-timeline .mt-card {
+  background: var(--coc-paper-hi);
+  border: 1px solid var(--coc-rule);
+  border-left: 3px solid var(--coc-rule-strong);
+  box-shadow: 2px 2px 0 var(--coc-shadow);
+  padding: 0.45rem 0.8rem 0.5rem;
+}
+.coc-timeline .mt-death .mt-card,
+.coc-timeline .mt-attack .mt-card { border-left-color: var(--coc-stamp); }
+.coc-timeline .mt-head strong { font-weight: 700; }
+.coc-timeline .mt-type,
+.coc-timeline .mt-time {
+  font-family: var(--coc-type);
+  font-size: 0.72em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--coc-ink-soft);
+  border: 1px solid var(--coc-rule-strong);
+  padding: 0 0.35em;
+  margin-left: 0.3em;
+  white-space: nowrap;
+}
+.coc-timeline .mt-summary { margin-top: 0.25rem; }
+.coc-timeline .mt-meta { margin-top: 0.25rem; font-size: 0.85em; color: var(--coc-ink-soft); }
+.coc-timeline p { margin: 0; display: inline; }

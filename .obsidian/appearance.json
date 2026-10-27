@@ -1,0 +1,11 @@
+{
+  "cssTheme": "ITS Theme",
+  "enabledCssSnippets": [
+    "S - Encoded Fonts",
+    "S - Encoded Icons",
+    "coc-1920s",
+    "coc-1920s-cool"
+  ],
+  "accentColor": "#7A5A1E",
+  "theme": "moonstone"
+}

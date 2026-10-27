@@ -1,0 +1,115 @@
+{
+  "githubRepo": "",
+  "githubToken": "",
+  "githubUserName": "",
+  "gardenBaseUrl": "",
+  "prHistory": [],
+  "baseTheme": "light",
+  "theme": "{\"name\":\"ITS Theme\",\"author\":\"SlRvb\",\"repo\":\"slrvb/Obsidian--ITS-Theme\",\"screenshot\":\"ITS.png\",\"modes\":[\"dark\",\"light\"],\"cssUrl\":\"https://raw.githubusercontent.com/slrvb/Obsidian--ITS-Theme/HEAD/theme.css\"}",
+  "faviconPath": "",
+  "logoPath": "",
+  "logoHeight": "",
+  "useFullResolutionImages": false,
+  "noteSettingsIsInitialized": true,
+  "siteName": "Call of Cthulhu Campaign",
+  "mainLanguage": "en",
+  "slugifyEnabled": true,
+  "excalidrawSvgExportEnabled": true,
+  "noteIconKey": "dg-note-icon",
+  "defaultNoteIcon": "",
+  "showNoteIconOnTitle": false,
+  "showNoteIconInFileTree": false,
+  "showNoteIconOnInternalLink": false,
+  "showNoteIconOnBackLink": false,
+  "showCreatedTimestamp": false,
+  "createdTimestampKey": "",
+  "showUpdatedTimestamp": false,
+  "updatedTimestampKey": "",
+  "timestampFormat": "MMM dd, yyyy h:mm a",
+  "styleSettingsCss": "body.css-settings-manager { --font: Special Elite; --header-weight: 800; --inline-title-font: Special Elite; --h1-font: \"Special Elite\"; --h2-font: \"Special Elite\"; --h3-font: \"Special Elite\"; --h4-font: \"Special Elite\"; --h5-font: \"Special Elite\"; --h6-font: \"Special Elite\"; } body.theme-light.css-settings-manager { } body.theme-dark.css-settings-manager { }",
+  "styleSettingsBodyClasses": "mod-windows is-frameless is-hidden-frameless obsidian-app styled-scrollbars theme-light show-inline-title is-floating-nav auto-full-screen show-ribbon show-view-header is-focused is-maximized css-settings-manager its-theme sidebar-float-bottom folder-arrow-hidden file-header-gradient inline-title-position-left check-color check-bg wotc-beyond accent-color drwn",
+  "pathRewriteRules": "",
+  "customFilters": [],
+  "publishPlatform": "SelfHosted",
+  "contentClassesKey": "dg-content-classes",
+  "forestrySettings": {
+    "forestryPageName": "",
+    "apiKey": "",
+    "baseUrl": ""
+  },
+  "defaultNoteSettings": {
+    "dgHomeLink": true,
+    "dgPassFrontmatter": true,
+    "dgShowBacklinks": false,
+    "dgShowLocalGraph": false,
+    "dgShowInlineTitle": false,
+    "dgShowFileTree": true,
+    "dgEnableSearch": true,
+    "dgShowToc": false,
+    "dgLinkPreview": false,
+    "dgShowTags": false
+  },
+  "uiStrings": {
+    "backlinkHeader": "",
+    "noBacklinksMessage": "",
+    "searchButtonText": "",
+    "searchPlaceholder": "",
+    "searchNotStarted": "",
+    "searchEnterHotkey": "",
+    "searchEnterHint": "",
+    "searchNavigateHotkey": "",
+    "searchNavigateHint": "",
+    "searchCloseHotkey": "",
+    "searchCloseHint": "",
+    "searchNoResults": "",
+    "searchPreviewPlaceholder": "",
+    "canvasDragHint": "",
+    "canvasZoomHint": "",
+    "canvasResetHint": ""
+  },
+  "localExportPath": "",
+  "contentBaseDir": "",
+  "navigationOrder": {
+    "/": [
+      "00 Campaign Home",
+      "01 Sessions",
+      "02 Characters",
+      "03 Locations",
+      "04 Investigation",
+      "05 Timeline",
+      "06 Lore and Mythos",
+      "07 Travel and Expeditions",
+      "09 Dashboards"
+    ],
+    "/00 Campaign Home": [
+      "Campaign Home",
+      "Structure",
+      "Vault Standards",
+      "Metadata Reference",
+      "Workflow Reference"
+    ],
+    "/02 Characters": [
+      "PCs",
+      "NPCs"
+    ],
+    "/04 Investigation": [
+      "Open Questions",
+      "Leads",
+      "Clues",
+      "Evidence",
+      "Handouts"
+    ],
+    "/06 Lore and Mythos": [
+      "Books and Tomes",
+      "Cults and Factions",
+      "Mythos Entities",
+      "Occult Practices",
+      "Organizations"
+    ],
+    "/07 Travel and Expeditions": [
+      "Travel Legs",
+      "Maps",
+      "Gear and Supplies"
+    ]
+  }
+}

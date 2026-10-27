@@ -1,0 +1,15 @@
+# Obsidian per-device state
+.obsidian/workspace.json
+.obsidian/workspace-*.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# Publisher PDFs and other reference material: never commit or publish
+assets/reference/
+
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+__pycache__/

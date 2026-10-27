@@ -1,0 +1,118 @@
+properties:
+  note.location:
+    displayName: Location
+  location:
+    displayName: Location
+  note.disposition:
+    displayName: Disposition
+  disposition:
+    displayName: Disposition
+  note.next_action:
+    displayName: Next Action
+  next_action:
+    displayName: Next Action
+  note.summary:
+    displayName: Summary
+  summary:
+    displayName: Summary
+  note.found_during:
+    displayName: Found During
+  found_during:
+    displayName: Found During
+  note.confidence:
+    displayName: Confidence
+  confidence:
+    displayName: Confidence
+  note.status:
+    displayName: Status
+  status:
+    displayName: Status
+  note.campaign_date:
+    displayName: Date
+  campaign_date:
+    displayName: Date
+views:
+- type: table
+  name: Sessions
+  filters:
+    and:
+    - type == "session"
+    - '!file.inFolder("10 Templates")'
+    - '!file.inFolder("99 - Archive")'
+    - '!file.inFolder("98 - Vault System")'
+  order:
+  - file.name
+  - campaign_date
+  - summary
+  sort:
+  - property: session_number
+    direction: DESC
+- type: list
+  name: Open Leads
+  filters:
+    and:
+    - type == "lead"
+    - status != "resolved"
+    - status != "dead-end"
+    - status != "archived"
+    - '!file.inFolder("10 Templates")'
+    - '!file.inFolder("99 - Archive")'
+    - '!file.inFolder("98 - Vault System")'
+  order:
+  - file.name
+  - status
+  - next_action
+  sort:
+  - property: file.name
+    direction: ASC
+- type: list
+  name: Open Questions
+  filters:
+    and:
+    - type == "open-question"
+    - status != "resolved"
+    - status != "archived"
+    - '!file.inFolder("10 Templates")'
+    - '!file.inFolder("99 - Archive")'
+    - '!file.inFolder("98 - Vault System")'
+  order:
+  - file.name
+  - summary
+  sort:
+  - property: file.name
+    direction: ASC
+- type: table
+  name: People
+  filters:
+    and:
+    - type == "npc"
+    - '!file.inFolder("10 Templates")'
+    - '!file.inFolder("99 - Archive")'
+    - '!file.inFolder("98 - Vault System")'
+  groupBy:
+    property: status
+    direction: ASC
+  order:
+  - file.name
+  - disposition
+  - location
+  - summary
+  sort:
+  - property: file.name
+    direction: ASC
+- type: table
+  name: Newest Clues
+  filters:
+    and:
+    - type == "clue"
+    - status != "archived"
+    - '!file.inFolder("10 Templates")'
+    - '!file.inFolder("99 - Archive")'
+    - '!file.inFolder("98 - Vault System")'
+  order:
+  - file.name
+  - confidence
+  - found_during
+  sort:
+  - property: file.name
+    direction: ASC

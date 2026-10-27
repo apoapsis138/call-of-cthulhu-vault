@@ -1,0 +1,357 @@
+/* @settings
+name: Case-file palette
+id: coc-palette
+settings:
+  -
+    id: coc-palette
+    title: Palette
+    description: Manila is the warm original. Carbon Copy is pale grey and Midnight Archive is dark. "Follow light/dark mode" uses Carbon Copy in light mode and Midnight Archive in dark mode.
+    type: class-select
+    allowEmpty: false
+    default: coc-palette-manila
+    options:
+      -
+        label: Manila (warm, original)
+        value: coc-palette-manila
+      -
+        label: Carbon Copy (pale grey)
+        value: coc-palette-carbon
+      -
+        label: Midnight Archive (dark)
+        value: coc-palette-midnight
+      -
+        label: Follow light/dark mode
+        value: coc-palette-auto
+*/
+
+/*
+  Call of Cthulhu: cool palettes for the 1920s case-file theme.
+  Turn this snippet on together with coc-1920s.css (keep that one on).
+  Pick the palette in Settings -> Style Settings -> Case-file
+  palette -> Palette. Manila (the default) leaves the theme untouched.
+  Carbon Copy: pale neutral grey paper, faint
+  blue cast, pewter ornaments, silver accents.
+  Midnight Archive: deep blue-black page,
+  off-white text, light blue links, soft red stamps.
+  "Follow light/dark mode" uses Carbon in light, Midnight in dark.
+  Same values as the site's
+  Palette switch (custom-style.scss). Every text pair passes WCAG AA.
+*/
+
+/* Manila values for the texture/stamp tokens, in case the base
+   snippet predates them */
+body {
+  --shadow-rgb: 30, 26, 21;
+  --stamp-rgb: 150, 30, 26;
+  --ruled-line: rgba(60, 90, 140, 0.09);
+  --ruled-line-card: rgba(60, 90, 140, 0.13);
+  --vignette: rgba(120, 90, 40, 0.12);
+  --rule-wash: rgba(191, 170, 124, 0.12);
+  --link-underline: rgba(35, 74, 115, 0.45);
+  --card-stock: #FBF8EE;
+  --card-edge: #D8CBA8;
+  --photo-border: #FFFDF7;
+  --stamp-paper: rgba(239, 227, 194, 0.82);
+  --missing-ink: rgba(35, 74, 115, 0.92);
+  --missing-navy: #1D2F4F;
+  --missing-status: #1D2F4F;
+  --missing-paper: rgba(240, 228, 200, 0.85);
+  --search-border: #4A4136;
+  --footer-text: #C9BEA5;
+  --footer-link: #EDE3CC;
+}
+
+html :is(body.coc-palette-carbon, body.theme-light.coc-palette-auto)[class] {
+  --paper: #E4E7E9;
+  --paper-card: #F5F7F8;
+  --paper-deep: #D2D8DD;
+  --ink: #16191D;
+  --ink-soft: #3B434C;
+  --ink-faint: #515B66;
+  --oxblood: #8A1F2E;
+  --oxblood-dark: #5A1220;
+  --ink-blue: #1F4B7D;
+  --ink-blue-dark: #143962;
+  --brass: #66727F;
+  --rule: #A7B1BB;
+  --night: #14181D;
+  --night-raised: #212730;
+  --night-text: #E4E9EE;
+  --gold: #BAC6D3;
+  --shadow-rgb: 22, 25, 29;
+  --stamp-rgb: 150, 30, 45;
+  --vignette: rgba(40, 60, 90, 0.12);
+  --rule-wash: rgba(167, 177, 187, 0.12);
+  --link-underline: rgba(31, 75, 125, 0.45);
+  --background-modifier-hover: rgba(31, 75, 125, 0.07);
+  --card-stock: #F9FAFB;
+  --card-edge: #C5CDD4;
+  --photo-border: #FCFDFD;
+  --stamp-paper: rgba(228, 231, 233, 0.82);
+  --missing-paper: rgba(228, 231, 233, 0.85);
+  --search-border: #3B434C;
+  --footer-text: #B4BECA;
+  --footer-link: #E4E9EE;
+  --coc-shadow: rgba(15, 25, 40, 0.18);
+}
+
+html :is(body.coc-palette-midnight, body.theme-dark.coc-palette-auto)[class] {
+  --paper: #1A2029;
+  --paper-card: #222A35;
+  --paper-deep: #131820;
+  --ink: #E3E7EC;
+  --ink-soft: #B6C0CB;
+  --ink-faint: #99A5B2;
+  --oxblood: #EE8F8F;
+  --oxblood-dark: #F5B0B0;
+  --ink-blue: #8FB8E8;
+  --ink-blue-dark: #B3D0F2;
+  --brass: #8D9BAA;
+  --rule: #3A4655;
+  --night: #0D1116;
+  --night-raised: #1A2029;
+  --night-text: #E3E7EC;
+  --gold: #C4CFDB;
+  --shadow-rgb: 0, 0, 0;
+  --ruled-line: rgba(140, 170, 210, 0.07);
+  --ruled-line-card: rgba(140, 170, 210, 0.10);
+  --vignette: rgba(0, 0, 0, 0.12);
+  --rule-wash: rgba(58, 70, 85, 0.12);
+  --link-underline: rgba(143, 184, 232, 0.5);
+  --background-modifier-hover: rgba(143, 184, 232, 0.10);
+  --card-stock: #222A35;
+  --card-edge: #3A4655;
+  --photo-border: #E9EDF1;
+  --stamp-paper: rgba(233, 237, 241, 0.82);
+  --missing-paper: rgba(233, 237, 241, 0.85);
+  --missing-status: #8FB8E8;
+  --search-border: #3A4655;
+  --footer-text: #99A5B2;
+  --footer-link: #E3E7EC;
+  --coc-shadow: rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
+}
+
+/* Rules whose colours were fixed in older copies of the base snippet */
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .content {
+  background-image: repeating-linear-gradient(transparent 0 1.7rem, var(--ruled-line) 1.7rem calc(1.7rem + 1px)), radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 70%, var(--vignette) 100%) !important;
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .markdown-rendered a,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .content a,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .markdown-rendered .internal-link,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .content .internal-link,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) article a,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .cm-hmd-internal-link,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .cm-link {
+  text-decoration-color: var(--link-underline) !important;
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .search-button,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .search-box {
+  border: 1px solid var(--search-border) !important;
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .markdown-rendered blockquote,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .content blockquote,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) article blockquote {
+  box-shadow: 2px 3px 0 rgba(var(--shadow-rgb), 0.08);
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .markdown-rendered table tr:nth-child(even),
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .content table tr:nth-child(even),
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .obsidian-base-table tbody tr:nth-child(even) {
+  background-color: var(--rule-wash);
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .callout:not([data-callout=infobox]) {
+  box-shadow: 2px 3px 0 rgba(var(--shadow-rgb), 0.08);
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .investigator-card,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .obsidian-base-card {
+  background-color: var(--card-stock) !important;
+  background-image: repeating-linear-gradient(transparent 0 1.45rem, var(--ruled-line-card) 1.45rem calc(1.45rem + 1px)) !important;
+  border: 1px solid var(--card-edge) !important;
+  box-shadow: 1px 2px 0 rgba(var(--shadow-rgb), 0.1), 3px 5px 10px rgba(var(--shadow-rgb), 0.1) !important;
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .investigator-card h3,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .investigator-card h4,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .obsidian-base-card h3 {
+  border-bottom: 2px solid rgba(var(--stamp-rgb), 0.55) !important;
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .callout[data-callout=infobox] {
+  box-shadow: 3px 4px 0 rgba(var(--shadow-rgb), 0.12) !important;
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .callout[data-callout=infobox] img {
+  border: 8px solid var(--photo-border) !important;
+  box-shadow: 1px 3px 6px rgba(var(--shadow-rgb), 0.35);
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .content:has(.deceased-flag) .callout[data-callout=infobox] p:has(> picture, > img)::after,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .deceased .callout[data-callout=infobox] p:has(> picture, > img)::after,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .deceased .callout[data-callout=infobox] .internal-embed:has(img)::after {
+  box-shadow: 1px 1px 3px rgba(var(--shadow-rgb), 0.35);
+  color: rgba(var(--stamp-rgb), 0.88);
+  border: 4px double rgba(var(--stamp-rgb), 0.88);
+  background: var(--stamp-paper);
+  text-shadow: 0 0 1px rgba(var(--stamp-rgb), 0.5);
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .content:has(.missing-flag) .callout[data-callout=infobox] p:has(> picture, > img)::after,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .missing .callout[data-callout=infobox] p:has(> picture, > img)::after,
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .missing .callout[data-callout=infobox] .internal-embed:has(img)::after {
+  color: var(--missing-ink);
+  border: 4px double var(--missing-ink);
+  background: var(--stamp-paper);
+  box-shadow: 1px 1px 3px rgba(var(--shadow-rgb), 0.35);
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .fan-policy-notice {
+  color: var(--footer-text);
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .fan-policy-notice p {
+  color: var(--footer-text) !important;
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .fan-policy-notice a {
+  color: var(--footer-link) !important;
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .callout[data-callout=infobox]:has(.coc-status-missing) p:has(> picture, > img)::after {
+  color: var(--missing-navy);
+  border: 3px solid var(--missing-navy);
+  outline: 1px solid var(--missing-navy);
+  background: var(--missing-paper);
+}
+
+:is(body.coc-palette-carbon, body.coc-palette-midnight, body.coc-palette-auto) .callout[data-callout=infobox] .coc-status-missing {
+  color: var(--missing-status);
+}
+
+/* ============================================================
+   Vault overrides: coc-1920s.css in this vault colours
+   everything through --coc-* tokens and a few literals,
+   none of which the palette above reaches. Values follow the
+   palette above. No filters here; the only filter in this file is the
+   Midnight portrait rule at the very end.
+   ============================================================ */
+
+/* ---------- Carbon Copy: --coc-* tokens and literal theme tokens ---------- */
+html :is(body.coc-palette-carbon, body.theme-light.coc-palette-auto)[class] {
+  --coc-paper: #E4E7E9;
+  --coc-paper-hi: #F5F7F8;
+  --coc-paper-shade: #DBE0E4;
+  --coc-paper-deep: #D2D8DD;
+  --coc-ink: #16191D;
+  --coc-ink-soft: #3B434C;
+  --coc-ink-faint: #515B66;
+  --coc-stamp: #8A1F2E;
+  --coc-stamp-fade: rgba(138, 31, 46, 0.72);
+  --coc-link: #1F4B7D;
+  --coc-link-hover: #143962;
+  --coc-rule: #A7B1BB;
+  --coc-rule-strong: #66727F;
+  --coc-ruled-line: rgba(60, 90, 140, 0.09);
+  --coc-photo-border: #FCFDFD;
+
+  --note-rgb: 228, 231, 233;
+  --deep-dark-accent: #5A1220;
+  --text-dl: #F5F7F8;
+  --hvr: rgba(31, 75, 125, 0.07);
+  --hvr-active: rgba(31, 75, 125, 0.14);
+  --highlight: rgba(110, 160, 210, 0.35);
+
+  /* tokens coc-1920s maps differently per mode: pin the light mapping
+     so Carbon Copy also holds when picked while Obsidian is in dark mode */
+  --outer-bar: var(--coc-paper-deep);
+  --side-bar: var(--coc-paper-deep);
+  --side-bar-bg: var(--coc-paper-deep);
+  --dark-sidebar: var(--coc-paper-shade);
+  --bg: var(--coc-paper-shade);
+  --code-bg: var(--coc-paper-shade);
+  --progress-bg: var(--coc-paper-shade);
+  --dark-accent: var(--coc-stamp);
+  --bttn: var(--coc-stamp);
+  --input-bg: var(--coc-paper-hi);
+  color-scheme: light;
+}
+
+/* ---------- Midnight Archive: --coc-* tokens and literal theme tokens ---------- */
+html :is(body.coc-palette-midnight, body.theme-dark.coc-palette-auto)[class] {
+  --coc-paper: #1A2029;
+  --coc-paper-hi: #222A35;
+  --coc-paper-shade: #131820;
+  --coc-paper-deep: #2A323E;
+  --coc-ink: #E3E7EC;
+  --coc-ink-soft: #B6C0CB;
+  --coc-ink-faint: #99A5B2;
+  --coc-stamp: #EE8F8F;
+  --coc-stamp-fade: rgba(238, 143, 143, 0.75);
+  --coc-link: #8FB8E8;
+  --coc-link-hover: #B3D0F2;
+  --coc-rule: #3A4655;
+  --coc-rule-strong: #5A6676;
+  --coc-ruled-line: rgba(140, 170, 210, 0.07);
+  --coc-photo-border: #E9EDF1;
+
+  --note-rgb: 26, 32, 41;
+  --dark-accent: #6B2A30;
+  --deep-dark-accent: #2E1216;
+  --bttn: #6B2A30;
+  --text-dl: #EEF1F4;
+  --input-bg: rgba(0, 0, 0, 0.3);
+  --hvr: rgba(143, 184, 232, 0.10);
+  --hvr-active: rgba(143, 184, 232, 0.16);
+  --highlight: rgba(110, 160, 210, 0.30);
+
+  /* pin the dark mapping so Midnight Archive also holds when picked
+     while Obsidian is in light mode */
+  --outer-bar: var(--coc-paper-shade);
+  --side-bar: var(--coc-paper-shade);
+  --side-bar-bg: var(--coc-paper-shade);
+  --dark-sidebar: var(--coc-paper-deep);
+  --bg: var(--coc-paper-deep);
+  --code-bg: var(--coc-paper-deep);
+  --progress-bg: var(--coc-paper-deep);
+  color-scheme: dark;
+}
+
+/* ---------- Callouts: literal warm --callout-color ---------- */
+html :is(body.coc-palette-carbon, body.theme-light.coc-palette-auto)[class] .callout:not([data-callout="infobox"]):not([data-callout="caption"]) {
+  --callout-color: 70, 85, 100;
+}
+html :is(body.coc-palette-midnight, body.theme-dark.coc-palette-auto)[class] .callout:not([data-callout="infobox"]):not([data-callout="caption"]) {
+  --callout-color: 160, 175, 190;
+}
+
+/* ---------- DECEASED / MISSING stamps: literal cream backing ---------- */
+html :is(body.coc-palette-carbon, body.theme-light.coc-palette-auto)[class] .callout[data-callout="infobox"]:is(:has(.coc-status-dead), :has(.coc-status-missing)) :is(.image-embed, picture, p:has(> img))::after {
+  background: rgba(228, 231, 233, 0.85);
+  box-shadow: 0 1px 3px rgba(22, 25, 29, 0.35);
+}
+html :is(body.coc-palette-midnight, body.theme-dark.coc-palette-auto)[class] .callout[data-callout="infobox"]:is(:has(.coc-status-dead), :has(.coc-status-missing)) :is(.image-embed, picture, p:has(> img))::after {
+  background: rgba(233, 237, 241, 0.85);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Status text in the infobox: follow the palette, not the mode ---------- */
+html :is(body.coc-palette-midnight, body.theme-dark.coc-palette-auto)[class] .callout[data-callout="infobox"] .coc-status-dead {
+  color: var(--coc-stamp);
+}
+html :is(body.coc-palette-carbon, body.theme-light.coc-palette-auto)[class] .callout[data-callout="infobox"] .coc-status-dead {
+  color: #8A140C;
+}
+
+/* Midnight Archive: portraits as black-and-white prints.
+   Portraits only: evidence and handout images keep their colour. */
+:is(body.coc-palette-midnight, body.theme-dark.coc-palette-auto) .callout[data-callout="infobox"] img,
+:is(body.coc-palette-midnight, body.theme-dark.coc-palette-auto) .obsidian-base-card-image img,
+:is(body.coc-palette-midnight, body.theme-dark.coc-palette-auto) .bases-cards-cover img,
+:is(body.coc-palette-midnight, body.theme-dark.coc-palette-auto) .bases-cards-cover {
+  filter: grayscale(1) brightness(0.86) contrast(1.05) !important;
+}

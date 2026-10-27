@@ -1,0 +1,4 @@
+# Files photo_treatment.py --new must never touch: painted artwork and handouts.
+# One path per line, from the vault root. Wildcards (*) are allowed.
+# Example:
+# assets/NPCs/Painted_Portrait.jpg
